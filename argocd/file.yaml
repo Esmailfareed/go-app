@@ -1,0 +1,23 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: go-app
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    path: ''
+    repoURL: https://github.com/Esmailfareed/go-app.git
+    targetRevision: ''
+    chart: go-web-app-chart
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+      enabled: true
+    syncOptions:
+      - CreateNamespace=true

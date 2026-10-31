@@ -1,0 +1,6 @@
+
+replicaCount: 1
+image:
+  tag: "v2"
+  repository: ismailfareed/go-web-app
+
